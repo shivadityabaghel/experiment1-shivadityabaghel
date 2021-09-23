@@ -1,0 +1,124 @@
+import java.util.Scanner;
+public class BankAccount {
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+
+        int userChoice;
+
+        boolean exit = false;
+
+        float balance = 0f;
+
+        do {
+            System.out.println("1. Create a Bank Account");
+
+            System.out.println("2. Deposit money");
+
+            System.out.println("3. Withdraw money");
+
+            System.out.println("4. Compute Interest");
+
+            System.out.println("5. Display balance");
+
+            System.out.print("Press 0 to quit: ");
+
+            userChoice = in.nextInt();
+
+            switch (userChoice) {
+                case 1: char name;
+                int age;
+                float mobno;
+                    System.out.print("Name: ");
+                    name = sc.next().charAt(0);
+                    System.out.print("Age: ");
+                    age =  in.nextInt();
+                    System.out.print("Mobile No: ");
+                    mobno =  in.nextFloat();
+                    System.out.print("Congratulation Your Account has been created!");
+
+
+                            break;
+
+                case 2:
+
+                    float amount;
+
+                    System.out.print("Amount you want to deposit: ");
+
+                    amount = in.nextFloat();
+
+                    if (amount <= 0)
+
+                        System.out.println("ERROR: Can't deposit amount.");
+
+                    else {
+
+                        balance += amount;
+
+                        System.out.println("Rs." + amount + " has been deposited to your account.");
+
+                    }
+
+                    break;
+
+                case 3:
+
+                    System.out.print("Amount to withdraw: ");
+
+                    amount = in.nextFloat();
+
+                    if (amount <= 0 || amount > balance)
+
+                        System.out.println("ERROR: Cannot Withdraw.");
+
+                    else {
+
+                        balance -= amount;
+
+                        System.out.println("Rs." + amount + " has been withdrawn.");
+
+                    }
+
+                    break;
+                case 4:
+                    float  r,  t,  si;
+                    System.out.println("Principal Amount:" +balance);
+                    System.out.println("Rate: ");
+                    r = in.nextFloat();
+                    System.out.println("Time: ");
+                    t = in.nextFloat();
+                    si  = (balance*r*t)/100;
+                    System.out.println("Simple Interest is: " +si);
+                    break;
+
+
+                case 5:
+
+                    System.out.println("Your balance amount: Rs." + balance);
+
+                    break;
+
+                case 0:
+
+                    exit = true;
+
+                    break;
+
+                default:
+
+                    System.out.println("ERROR: Wrong Choice.");
+
+                    break;
+
+            }
+
+            System.out.println();
+
+        } while (!exit);
+
+        System.out.println("Thank You!");
+
+    }
+}
