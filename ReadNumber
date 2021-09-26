@@ -1,0 +1,109 @@
+mport java.util.Scanner;
+public class ReadNumber {
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+
+        int userChoice;
+
+        boolean exit = false;
+
+        float balance = 0f;
+
+        do {
+            System.out.println("1. Factorial ");
+
+            System.out.println("2. Test Armstrong ");
+
+            System.out.println("3. Test Palindrome ");
+
+            System.out.println("4. Test Prime Number ");
+
+            System.out.println("5. Fibonacci series");
+
+            System.out.print("Press 0 to quit: ");
+
+            userChoice = in.nextInt();
+
+            switch (userChoice) {
+                case 1:
+                    int num;
+                    System.out.print("Enter number: ");
+                    num = in.nextInt();
+                    int f = 1;
+                    for (int i = 1; i <= num; i++)
+                        f *= i;
+                    System.out.println("Factorial = " + f);
+                    break;
+
+                case 2:
+                    break;
+                case 3:
+                    int r,sum=0,temp;
+                    int n;
+                    System.out.print("Enter number: ");
+                    n = in.nextInt();
+                    temp=n;
+                    while(n>0){
+                        r=n%10;
+                        sum=(sum*10)+r;
+                        n=n/10;
+                    }
+                    if(temp==sum)
+                        System.out.println("palindrome number ");
+                    else
+                        System.out.println("not palindrome");
+            break;
+                case 4:
+                    int c = 0;
+                    int m;
+                    System.out.print("Enter number: ");
+                    m = in.nextInt();
+                    for (int i = 1; i <= m; i++) {
+                        if (m % i == 0) {
+                            c++;
+                        }
+                    }
+                    if (c == 2)
+                        System.out.println(m + " is Prime");
+                    else
+                        System.out.println(m + " is not Prime");
+                    break;
+
+                case 5:
+
+                    int n1=0,n2=1,n3,i,count=10;
+                    System.out.print(n1+" "+n2);
+
+                    for(i=2;i<count;++i)
+                    {
+                        n3=n1+n2;
+                        System.out.print(" "+n3);
+                        n1=n2;
+                        n2=n3;
+                    }
+                    break;
+
+                case 0:
+
+                    exit = true;
+
+                    break;
+
+                default:
+
+                    System.out.println("ERROR: Wrong Choice.");
+
+                    break;
+
+            }
+
+            System.out.println();
+
+        } while (!exit);
+
+        System.out.println("Thank You!");
+
+    }
+}
