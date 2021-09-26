@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class Student {
+    String name = "unknown";
+    int age = 0;
+    String address = "not available";
+
+    public Student() {
+    }
+
+    public void setinfo(int age, String name) {
+        this.name = nameame;
+        this.age = age;
+    }
+
+    public void setinfo(int age, String name, String address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+
+    public String toString() {
+        return "Student [name=" + this.name + ", age=" + this.age + ", address=" + this.address + "]";
+    }
+
+    public static void main(String[] args) {
+        List<Student> stu = new ArrayList();
+        stu.add(new Student());
+        stu.add(new Student());
+        stu.add(new Student());
+        stu.add(new Student());
+        stu.add(new Student());
+        stu.add(new Student());
+        stu.add(new Student());
+        stu.add(new Student());
+        stu.add(new Student());
+        stu.add(new Student());
+        ((Student)stu.get(0)).setinfo(19, "Shivaditya", "Mumbai,India");
+        ((Student)stu.get(1)).setinfo(18, "Swayam", "Delhi,India");
+        ((Student)stu.get(2)).setinfo(19, "Soham", "Goa,India");
+        ((Student)stu.get(5)).setinfo(19, "Virat", "UP,India");
+        ((Student)stu.get(3)).setinfo(18, "Rohan", "Pune,India");
+        ((Student)stu.get(4)).setinfo(10, "Rohit");
+        Iterator var2 = stu.iterator();
+
+        while(var2.hasNext()) {
+            Student s = (Student)var2.next();
+            System.out.println(s);
+        }
+    }
+}
