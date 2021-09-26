@@ -39,9 +39,9 @@ public class Student {
         stu.add(new Student());
         ((Student)stu.get(0)).setinfo(19, "Shivaditya", "Mumbai,India");
         ((Student)stu.get(1)).setinfo(18, "Swayam", "Delhi,India");
-        ((Student)stu.get(2)).setinfo(19, "Soham", "Goa,India");
-        ((Student)stu.get(5)).setinfo(19, "Virat", "UP,India");
-        ((Student)stu.get(3)).setinfo(18, "Rohan", "Pune,India");
+        ((Student)stu.get(2)).setinfo(19, "Soham", "Kolkata,India");
+        ((Student)stu.get(5)).setinfo(19, "Virat", "Mumbai,India");
+        ((Student)stu.get(3)).setinfo(18, "Rohan", "Bangalore,India");
         ((Student)stu.get(4)).setinfo(10, "Rohit");
         Iterator var2 = stu.iterator();
 
