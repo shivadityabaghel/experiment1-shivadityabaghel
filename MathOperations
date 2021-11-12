@@ -1,0 +1,100 @@
+import java.util.Scanner;
+
+public class Math {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        double num = sc.nextDouble();
+        int ch=1;
+// creating a menu for selection
+        while (ch!=0){
+            System.out.println("\nEnter \n1 Factorial \n2 Test if the number is an Armstrong \n3 Test Palindrome\n4 Test Prime number\n5 Fibonacci series\n0 to exit");
+            ch = sc.nextInt();
+            switch (ch) {
+                case 0 -> {}
+                case 1 -> factorial(num);
+                case 2 -> testArmstrong(num);
+                case 3 -> testPalindrome(num);
+                case 4 -> testPrime(num);
+                case 5 -> fibonacciSeries((int)num);
+                default -> System.out.println("Wrong input");
+            }
+        }
+    }
+
+    // calculating the factorial using method
+    static void factorial(double num){
+        double r=1;
+        for(int i=1; i<=num; i++){
+            r=r*i;
+        }
+        System.out.println("Factorial = "+r);
+    }
+
+    // testing if the number is an Armstrong
+    static void testArmstrong(double num){
+        double r,sum=0,temp=num;
+        while(num>0)
+        {
+            r=num%10;
+            sum=sum+(r*r*r);
+            num=num/10;
+        }
+        if (temp==sum){
+            System.out.println("The given number is an Armstrong number");
+        }
+        else{
+            System.out.println("The given number is not an Armstrong number");
+        }
+    }
+
+    // testing if the number is a palindrome
+    static void testPalindrome(double num){
+        double r,sum=0,temp=num;
+        while(num>0)
+        {
+            r=num%10;
+            sum=sum*10+(r);
+            num=num/10;
+
+        }
+        if (temp==sum){
+            System.out.println("The given number is a Palindrome number");
+        }
+        else if (temp<10){
+            System.out.println("0-9 all are Palindrome numbers");
+        }
+        else{
+            System.out.println("The given number is not a Palindrome number");
+        }
+
+    }
+
+    // testing if the number is a prime number
+    static void testPrime(double num){
+        double r,flag=0;
+        r=num/2;
+        for (int i=2; i<=r;i++) {
+            if (num % i == 0) {
+                System.out.println("The given number is not a prime number");
+                flag = 1;
+                break;
+            }
+        }
+        if(flag==0){
+            System.out.println("The given number is a prime number");
+        }
+    }
+
+    // printing a fibonacci series
+    static void fibonacciSeries(double num){
+        double n1=0,n2=1,n3;
+        System.out.print(n1+" "+n2);
+        for (int i=2; i<=num;i++){
+            n3=n1+n2;
+            System.out.print(" "+n3);
+            n1=n2;
+            n2=n3;
+        }
+    }
+}
